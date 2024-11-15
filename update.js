@@ -15,8 +15,7 @@ function extract(filepath) {
   // HACK: CSVs have different date formats
   const normalDates = dates.map((date) => {
     const [month, day, year] = date.split("/");
-    const twoDigitsYear = year.slice(-2);
-    return `20${twoDigitsYear}-${month}-${day}`;
+    return `${year}-${month}-${day}`;
   });
 
   rows.forEach(([province, country, lat, long, ...counts]) => {
